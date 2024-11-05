@@ -5,18 +5,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { isPlatformBrowser } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [   
+  imports: [
     RouterOutlet,
     RouterLinkActive,
     RouterLink,
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
+    FormsModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -35,5 +37,8 @@ export class AppComponent {
   //shouldRun = /(^|.)(stackblitz|webcontainer).(io|com)$/.test(window.location.host);
 
 
-  
+  // events: string[] = [];
+  // opened: boolean = true;
+
+  // shouldRun = /(^|.)(stackblitz|webcontainer).(io|com)$/.test(window.location.host);
 }

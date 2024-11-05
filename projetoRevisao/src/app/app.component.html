@@ -7,11 +7,15 @@
     
     <a mat-button routerLink="/" class="top-menu-item">Home</a>
     <a mat-button routerLink="/promise" class="top-menu-item">Conceito Promise</a>
-    <a mat-button routerLink="/observables" class="top-menu-item">Comceito Observables</a>    
+    <a mat-button routerLink="/observables" class="top-menu-item">Comceito Observables</a>   
+    <a mat-button routerLink="/carrinho" class="top-menu-item">Carrinho</a>
 </mat-toolbar>
 
 <mat-sidenav-container>
      <!--opened significa que vai ficar sempre abberto-->
+     <!--fixedInViewport: preenche todo o conteudo da tela-->
+     <!--mode: side: empurra o conteudo-->
+     <!--mode: over: sobreponhe o conteudo-->
     <mat-sidenav #sidenav [fixedInViewport]="true" [fixedTopGap]="60" mode="side">
        <div class="side-nav-items">
         <div>
@@ -22,12 +26,42 @@
         </div>
         <div>
             <a (click)="sidenav.close()" mat-button routerLink="/observables" class="side-menu-item"><mat-icon>person_add</mat-icon>Comceito Observables</a>    
-        </div>    
+        </div>
+        <div>
+          <a (click)="sidenav.close()" mat-button routerLink="/carrinho" class="side-menu-item"><mat-icon>person_add</mat-icon>Carrinho</a>    
+        </div>
        </div>
     </mat-sidenav>
+
     <mat-sidenav-content>
-        <router-outlet></router-outlet>
+        <div class="main-content">
+            <router-outlet></router-outlet>
+        </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
   
 
+<!-- 
+@if (shouldRun) {
+    <mat-sidenav-container class="example-container">
+      <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
+                  (closed)="events.push('close!')">
+        Sidenav content
+      </mat-sidenav>
+  
+      <mat-sidenav-content>
+        <p><mat-checkbox [(ngModel)]="opened">sidenav.opened</mat-checkbox></p>
+        <p><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p>
+        <p>Events:</p>
+        <div class="example-events">
+          @for (e of events; track e) {
+            <div>{{e}}</div>
+          }
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  } @else {
+    <div>Please open on Stackblitz to see result</div>
+  }
+   -->
+  

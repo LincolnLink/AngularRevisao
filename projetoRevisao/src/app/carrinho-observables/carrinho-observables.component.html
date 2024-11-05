@@ -1,0 +1,18 @@
+<h1>carrinho-observables works!</h1>
+<br>
+<label for="">Add Produto: </label><br>
+<input
+    type="text"    
+    [(ngModel)]="inputProduto"
+    (keyup.enter)="adicionarProduto()">
+<br>
+@if (mostrarContador){
+    <div>
+        <app-carrinho />
+    </div>
+}
+<br>
+<br>
+<button (click)="mostrarContador = !mostrarContador"> 
+    Mostrar / Esconder Contador 
+</button>
