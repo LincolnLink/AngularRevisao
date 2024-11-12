@@ -1,0 +1,26 @@
+
+    <h2>Signals</h2>
+    <br>
+    Set com string: {{ exemploSignal01() }}
+    <br>
+    Update com inteiro: {{ exemploSignal02() }}
+    <br>
+    Update com string: {{ exemploSignal03() }}
+    <br>
+    Update com objeto complexo: {{ exemploSignal04() | json }}
+    <br> 
+    <br>
+    <button (click)="executar()"> Executar </button>
+    <br>
+    <br>
+<h2>Computed</h2>
+    <br>
+    Nosso Signal: {{ exemploCount() }}
+    <br>
+    Comuted: {{ computedExemplo() }}
+    <br>
+    <!--evitar chamar funcao-->
+    <!-- {{ testeFuncao() }} -->
+
+    <br>
+    <button (click)="executar2()"> Executar </button>

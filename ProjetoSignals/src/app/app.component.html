@@ -6,9 +6,8 @@
   <span id="menuTitle">App Component</span>    
   
   <a mat-button routerLink="/" class="top-menu-item">Home</a>
-  <a mat-button routerLink="/promise" class="top-menu-item">Conceito Promise</a>
-  <a mat-button routerLink="/observables" class="top-menu-item">Comceito Observables</a>   
-  <a mat-button routerLink="/carrinho" class="top-menu-item">Carrinho</a>
+  <a mat-button routerLink="/signalsExemplo" class="top-menu-item">Signals Exemplo</a>
+  
 </mat-toolbar>
 
 <mat-sidenav-container>
@@ -22,14 +21,8 @@
           <a (click)="sidenav.close()" mat-button routerLink="/" class="side-menu-item"><mat-icon>home</mat-icon> Home</a>
       </div>
       <div>
-          <a (click)="sidenav.close()" mat-button routerLink="/promise" class="side-menu-item"><mat-icon>people</mat-icon>Conceito Promise</a>
-      </div>
-      <div>
-          <a (click)="sidenav.close()" mat-button routerLink="/observables" class="side-menu-item"><mat-icon>person_add</mat-icon>Comceito Observables</a>    
-      </div>
-      <div>
-        <a (click)="sidenav.close()" mat-button routerLink="/carrinho" class="side-menu-item"><mat-icon>person_add</mat-icon>Carrinho</a>    
-      </div>
+          <a (click)="sidenav.close()" mat-button routerLink="/signalsExemplo" class="side-menu-item"><mat-icon>people</mat-icon>Signals Exemplo</a>
+      </div>      
      </div>
   </mat-sidenav>
 
