@@ -1,5 +1,5 @@
 import { JsonPipe } from '@angular/common';
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, effect, Injector, OnInit, signal } from '@angular/core';
 
 
 @Component({
@@ -9,23 +9,19 @@ import { Component, computed, signal } from '@angular/core';
   templateUrl: './signals-exemplo.component.html',
   styleUrl: './signals-exemplo.component.css'
 })
-export class SignalsExemploComponent {
+export class SignalsExemploComponent implements OnInit {
 
   protected exemploSignal01 = signal('Lincoln');
   protected exemploSignal02 = signal(1);
   protected exemploSignal03 = signal('Lincoln');
   protected exemploSignal04 = signal({nome: "Lincoln", idade: 34});
 
-  //Computed
-  protected exemploCount = signal(1);
-  
-  protected computedExemplo = computed(() =>{
-    console.log('Passei pelo computed!')
-    return `${this.exemploCount()} computed!`
-  });
- 
-  executar(){
+  // testeFuncao(){
+  //   console.log('FUNCAO');
+  //   return 'FUNCAO'
+  // }
 
+  executar(){
     //Set: define o signal para um novo valor absoluto.
     this.exemploSignal01.set("Lincoln Ferreira Campos");
 
@@ -47,16 +43,61 @@ export class SignalsExemploComponent {
     //Mutate: Define o signal com base no valor atual sem obj total.
     //this.exemploSignal05.mutate(atual => atual.nome = "Lincoln Ferreira Campos");
   }
-
-  executar2(){
-    this.exemploCount.update(atual => atual + 1);
-
-    
-
+  
+  
+  //----------Computed------------------------
+  //Chama os metodo de dentro para fora, quando executa um metodo que está dentro
+  // de outro metodo, ele executa o de dentro e o de fora!
+  protected exemploCount = signal(1);
+  protected showCount = signal(true); //desliga a dependencia.
+  
+  protected computedExemplo = computed(() => {
+    console.log('COMPUTED ACIONADO!');
+    if(this.showCount()){     
+      return `${this.exemploCount()} computed!`
+    }
+    else{
+      return 'NADA';
+    }    
+  });
+ 
+  executarComputed(){
+    this.exemploCount.update(atual => atual + 1); 
   }
 
-  // testeFuncao(){
-  //   console.log('FUNCAO');
-  //   return 'FUNCAO'
+  Alterar(){
+    this.showCount.update(atual => !atual);
+  }
+
+ 
+  //---------------------------effect-----------------------------
+  // deve ser declarado no construtor.
+  // são disparado com um efeito colateral
+
+  // constructor(){
+  //   effect(() =>{
+  //     //console.log(`ALTEROU NO EFFECT ${this.exemploCount()}`);
+  //     console.log(`ALTEROU NO EFFECT <--executa aqui`);
+  //     this.exemploCount()
+  //   })
   // }
+
+  constructor(private injector: Injector){}
+
+  ngOnInit(): void {
+   //Para usar o effect fora do construtor deve fazer uma Injecao de dependencia
+   //Passando por parametro no construtor: "private inector: Injector".
+    effect(() =>{
+        //console.log(`ALTEROU NO EFFECT ${this.exemploCount()}`);
+        console.log(`ALTEROU NO EFFECT <--executa aqui`);
+        this.exemploCount()
+    }, {injector: this.injector})
+  }
+
+
+  //--------------- OnPush-----------------------
+
+  
+
+
 }
