@@ -1,0 +1,22 @@
+<form [formGroup]="form">
+    <div class="form-field">
+        <!-- <label>Rua:</label>
+        <input type="text" formControlName="rua"> -->
+        <app-input label="Rua:" formControlName="rua" />
+    </div>
+
+    <div class="form-field">
+        <label>Numero:</label>
+        <input type="number" formControlName="numero">
+    </div>
+
+    <div class="form-field">
+        <label>Complemento:</label>
+        <input type="text" formControlName="complemento">
+    </div>
+</form>
+
+<button (click)="onClick()"> Print Form</button>
+<button [disabled]="form.invalid"> Enviar </button>
+
+<p> Form is valid: {{form.valid}}</p>
