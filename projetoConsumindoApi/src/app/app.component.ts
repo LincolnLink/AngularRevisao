@@ -1,18 +1,17 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Music } from './models/music.model';
 import { MusicService } from './services/music.service';
 import { Observable } from 'rxjs';
-import { HttpClientModule } from '@angular/common/http';
-import { BrowserModule } from '@angular/platform-browser';
-
 
 @Component({
   selector: 'app-root',
-  imports: [
-    BrowserModule,
+  standalone: true,
+  imports: [    
     FormsModule,
+    CommonModule,
     HttpClientModule
   ],
   templateUrl: './app.component.html',
