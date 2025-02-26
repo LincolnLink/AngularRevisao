@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "projetoForm": {
+    "projetoConsumindoApi": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/projeto-form",
+            "outputPath": "dist/projeto-consumindo-api",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -27,7 +27,6 @@
               }
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/magenta-violet.css",
               "src/styles.css"
             ],
             "scripts": [],
@@ -53,16 +52,10 @@
               ],
               "outputHashing": "all"
             },
-            "development": {
-              "optimization": false,
+            "development": {             
+              "optimization": false,              
               "extractLicenses": false,
-              "sourceMap": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.development.ts"
-                }
-              ]
+              "sourceMap": true                          
             }
           },
           "defaultConfiguration": "production"
@@ -71,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "projetoForm:build:production"
+              "buildTarget": "projetoConsumindoApi:build:production"
             },
             "development": {
-              "buildTarget": "projetoForm:build:development"
+              "buildTarget": "projetoConsumindoApi:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -97,7 +90,6 @@
               }
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/magenta-violet.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -107,6 +99,6 @@
     }
   },
   "cli": {
-    "analytics": "d86309b9-6f24-4ad1-9836-166f2bfec957"
+    "analytics": "1337d1ad-e2cd-42b2-8a15-7c8642e5d032"
   }
 }

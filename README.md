@@ -41,3 +41,9 @@ lidar com uma variedade de operações assíncronas comuns
  aparece antes que o input seja usado.
 
  - 
+
+ # request avançado
+
+  - ng g environments: comando que cria as pastas certas para 2 ambientes no projeto
+
+  - 
