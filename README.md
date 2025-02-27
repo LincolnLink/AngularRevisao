@@ -46,4 +46,18 @@ lidar com uma variedade de operações assíncronas comuns
 
   - ng g environments: comando que cria as pastas certas para 2 ambientes no projeto
 
-  - 
+  ### rodando JSON server
+
+  - Comando que instala global:
+
+    npm install -g json-server
+ 
+  - Comando que instala:
+
+    npm install json-server --save-dev
+
+  - Comando que executa, tem que criar o arquivo db.json: 
+
+    npx json-server --watch db.json --port 3000
+
+

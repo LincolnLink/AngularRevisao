@@ -3,5 +3,6 @@ export type Music = {
     author: string,
     text: string
 }
-  
-  export type MusicCadastrar = Omit<Music, 'id'>;
+
+// Um tipo sem o id obrigatorio
+export type MusicCadastrar = Omit<Music, 'id'>;

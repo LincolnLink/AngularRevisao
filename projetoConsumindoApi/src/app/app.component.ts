@@ -30,7 +30,7 @@ export class AppComponent {
 
   constructor(private musicService: MusicService){
     this.obterMusicasCadastradas();
-    console.log('environment.api')
+    
   }
 
   obterMusicasCadastradas(){

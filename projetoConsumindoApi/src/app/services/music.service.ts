@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http"
 import { environment } from "../../environments/environment";
 import { Music, MusicCadastrar } from "../models/music.model";
 
+//Injeção de dependencia, para usar nos component
 @Injectable({
   providedIn: 'root'
 })
@@ -15,6 +16,7 @@ export class MusicService{
   //No TS só por private, que a variavel é acessivel por fora.
   constructor(private httpClient: HttpClient){
     //this._httpClient = httpClient
+    // console.log(environment.api)
   }
 
   obterMusicas(){
