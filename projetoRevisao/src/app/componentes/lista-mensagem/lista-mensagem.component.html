@@ -1,1 +1,37 @@
-<p>lista-mensagem works!</p>
+<section class="mensagens-container">
+	<h2>Cadastro de Mensagens</h2>
+
+	<form class="mensagem-form" (ngSubmit)="adicionarMensagem()">
+		<mat-form-field appearance="outline" class="mensagem-field">
+			<mat-label>Digite sua mensagem</mat-label>
+			<input
+				matInput
+				name="mensagem"
+				[(ngModel)]="mensagemTexto"
+				placeholder="Ex: Lembrar da reunião das 14h"
+			/>
+		</mat-form-field>
+
+		<button mat-raised-button color="primary" type="submit">
+			<mat-icon>add</mat-icon>
+			Adicionar
+		</button>
+	</form>
+
+	<div class="lista-wrapper">
+		<h3>Mensagens adicionadas</h3>
+
+		<p *ngIf="mensagensJson.length === 0" class="vazio">
+			Nenhuma mensagem cadastrada ainda.
+		</p>
+
+		<ul *ngIf="mensagensJson.length > 0" class="lista-mensagens">
+			<li *ngFor="let mensagem of mensagensJson" class="item-mensagem">
+				<span>{{ mensagem.texto }}</span>
+				<button mat-icon-button color="warn" (click)="deletarMensagem(mensagem.id)" aria-label="Deletar mensagem">
+					<mat-icon>delete</mat-icon>
+				</button>
+			</li>
+		</ul>
+	</div>
+</section>

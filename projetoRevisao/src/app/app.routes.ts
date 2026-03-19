@@ -4,6 +4,7 @@ import { ConceitoPromiseComponent } from './componentes/conceito-promise/conceit
 import { ComceitoObservablesComponent } from './componentes/comceito-observables/comceito-observables.component';
 import { CarrinhoObservablesComponent } from './componentes/carrinho-observables/carrinho-observables.component';
 import { ComponentePaiComponent } from './componentes/componente-pai/componente-pai.component';
+import { ListaMensagemComponent } from './componentes/lista-mensagem/lista-mensagem.component';
 
 export const routes: Routes = [
 
@@ -12,6 +13,7 @@ export const routes: Routes = [
     {path: 'carrinho', component: CarrinhoObservablesComponent},
     {path: 'observables', component: ComceitoObservablesComponent},
     {path: 'componentePai', component: ComponentePaiComponent},
+    {path: 'listaMensagem', component: ListaMensagemComponent},
     /*{
         path: 'cursos',
         loadChildren: () => import('./cursos/cursos.routes')

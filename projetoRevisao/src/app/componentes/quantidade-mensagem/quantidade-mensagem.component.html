@@ -1,1 +1,16 @@
-<p>quantidade-mensagem works!</p>
+<div
+	class="bolinha-mensagens"
+	[matTooltip]="ultimasMensagensTooltip"
+	matTooltipPosition="below"
+	aria-label="Quantidade total de mensagens"
+>
+	<mat-icon
+		matBadge="{{ totalMensagens }}"
+		matBadgeColor="warn"
+		matBadgeOverlap="false"
+		aria-hidden="false"
+		aria-label="Mensagens"
+	>
+		mark_email_unread
+	</mat-icon>
+</div>

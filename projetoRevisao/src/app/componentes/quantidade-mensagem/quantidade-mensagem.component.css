@@ -1,0 +1,13 @@
+.bolinha-mensagens {
+	margin-left: auto;
+	display: flex;
+	align-items: center;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.bolinha-mensagens mat-icon {
+	font-size: 30px;
+	width: 30px;
+	height: 30px;
+}

@@ -6,6 +6,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { QuantidadeMensagemComponent } from './componentes/quantidade-mensagem/quantidade-mensagem.component';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
-    FormsModule
+    FormsModule,
+    QuantidadeMensagemComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
