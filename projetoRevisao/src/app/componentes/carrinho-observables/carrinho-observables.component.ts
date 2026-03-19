@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
-import { CarrinhoService } from '../services/carrinho.service';
+import { CarrinhoService } from '../../services/carrinho.service';
 
 @Component({
   selector: 'app-carrinho-observables',

@@ -1,5 +1,5 @@
 import { Component, inject, OnDestroy } from '@angular/core';
-import { CarrinhoService } from '../../services/carrinho.service';
+import { CarrinhoService } from '../../../services/carrinho.service';
 import { Subscription, take } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 
@@ -8,7 +8,7 @@ import { AsyncPipe } from '@angular/common';
 @Component({
   selector: 'app-carrinho',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [],
   templateUrl: './carrinho.component.html',
   styleUrl: './carrinho.component.css'
 })

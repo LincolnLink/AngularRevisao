@@ -1,0 +1,22 @@
+<div style="border: 2px solid blue; padding: 20px; border-radius: 8px;">
+	<h2>Componente Pai</h2>
+
+	<p><strong>Dados atuais:</strong></p>
+	<ul>
+		<li>Nome: {{ pessoa.nome }}</li>
+		<li>Email: {{ pessoa.email }}</li>
+		<li>Idade: {{ pessoa.idade }}</li>
+	</ul>
+
+	<p *ngIf="mensagem" style="color: green; font-weight: bold;">
+		{{ mensagem }}
+	</p>
+
+	<hr />
+
+	<!-- Repassa os dados para o filho e escuta o evento de retorno -->
+	<app-componente-filho
+		[pessoaRecebida]="pessoa"
+		(pessoaAtualizada)="receberDadosDoFilho($event)">
+	</app-componente-filho>
+</div>

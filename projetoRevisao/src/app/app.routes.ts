@@ -1,8 +1,9 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { ConceitoPromiseComponent } from './conceito-promise/conceito-promise.component';
-import { ComceitoObservablesComponent } from './comceito-observables/comceito-observables.component';
-import { CarrinhoObservablesComponent } from './carrinho-observables/carrinho-observables.component';
+import { ConceitoPromiseComponent } from './componentes/conceito-promise/conceito-promise.component';
+import { ComceitoObservablesComponent } from './componentes/comceito-observables/comceito-observables.component';
+import { CarrinhoObservablesComponent } from './componentes/carrinho-observables/carrinho-observables.component';
+import { ComponentePaiComponent } from './componentes/componente-pai/componente-pai.component';
 
 export const routes: Routes = [
 
@@ -10,6 +11,7 @@ export const routes: Routes = [
     {path: 'promise', component: ConceitoPromiseComponent},
     {path: 'carrinho', component: CarrinhoObservablesComponent},
     {path: 'observables', component: ComceitoObservablesComponent},
+    {path: 'componentePai', component: ComponentePaiComponent},
     /*{
         path: 'cursos',
         loadChildren: () => import('./cursos/cursos.routes')

@@ -12,7 +12,6 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [
     RouterOutlet,
-    RouterLinkActive,
     RouterLink,
     MatButtonModule,
     MatToolbarModule,
